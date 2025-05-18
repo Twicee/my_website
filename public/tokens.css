@@ -1,0 +1,10 @@
+:root{
+    --site-background-color: #b3e19f;
+    --site-text-color: #2c2c2c;
+    --site-link-color: #0e6ba8;
+    --header-background-color: #ddc9ce;
+    --header-text-color: #7e2626;
+    --body-font: "Josefin Sans", sans-serif;
+    --header-font: "Abril Fatface", serif;
+    --border-underline-color: black;
+}
