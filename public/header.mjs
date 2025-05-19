@@ -43,7 +43,7 @@ const linksForFavClassesPage = [
   { href: './index.html', text: 'Home' }
 ];
 
-if (window.location.pathname === "/index.html") {
+if (window.location.pathname === "/index.html" || "/") {
   insertHeader(linksForHomePage);
 } else if (window.location.pathname === "/fav_classes.html") {
   insertHeader(linksForFavClassesPage);
