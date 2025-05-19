@@ -7,4 +7,29 @@
     --body-font: "Josefin Sans", sans-serif;
     --header-font: "Abril Fatface", serif;
     --border-underline-color: black;
+    --button-color: #7e2626;
+    --button-text-color: white;
+}
+
+/* Add to tokens.css */
+body.dark-mode {
+    --site-background-color: #00004d;
+    --site-text-color: #e8ffff;
+    --site-link-color: #ffa576;
+    --header-background-color: #101070;
+    --header-text-color: #e8ffff;
+    --border-underline-color: var(--site-link-color);
+}
+
+/* Update visited link color to use variable */
+a:visited {
+    color: var(--site-link-visited-color);
+}
+
+:root {
+    --site-link-visited-color: purple;
+}
+
+body.dark-mode {
+    --site-link-visited-color: #ffa576;
 }

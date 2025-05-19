@@ -22,10 +22,6 @@ a:focus{
     opacity: 85%;
 }
 
-a:visited{
-    color: purple;
-}
-
 .page-title{
     color: var(--header-text-color);
     font-family: var(--header-font, "sans-serif");
@@ -50,8 +46,10 @@ nav{
 .site-header{
     display: flex;
     min-height: 200px;
+    min-width: fit-content;
     justify-content: space-between;
     background-color: var(--header-background-color);
+    align-items: center;
 }
 
 figure{
@@ -86,7 +84,8 @@ h2{
 }
 
 #hobbies{
-    margin: 40px
+    margin: 60px;
+    min-height: 375px;
 }
 
 #hobbies h2{
@@ -102,7 +101,8 @@ h2{
 
 .main-content{
     display: grid;
-    grid-template-columns: max-content 1fr;
+    /* grid-template-columns: max-content 1fr; */
+    grid-template-columns: repeat(2, minmax(350px, 1fr))
 }
 
 .favorite{
@@ -120,9 +120,89 @@ section{
     gap: 50px;
 }
 
+#menu-button{
+    font-size: 20px;
+    padding: 10px 20px;
+    display: none;
+    margin: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #962b46;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+}
 
-@media only screen and (max-width: 1224px){
-    .page-title{
-        font-size: 40px
+.dark-mode-toggle {
+    order: 2;
+    margin: 0 20px;
+    padding: 10px 20px; /* Reduced padding to make it less bulky */
+    background-color: var(--site-background-color); /* Matches background color */
+    border: 2px solid var(--site-link-color); /* Border color */
+    border-radius: 25px; /* Rounded corners for a more modern look */
+    font-size: 20px;
+    cursor: pointer; /* Pointer cursor to show it's clickable */
+    display: inline-flex; /* Use flex for better alignment */
+    align-items: center;
+    justify-content: center; /* Center the content inside the button */
+}
+
+/* Styles for when dark mode is active */
+body.dark-mode .dark-mode-toggle {
+    background-color: var(--site-link-color);
+    border-color: var(--site-text-color);
+    color: var(--site-text-color); 
+}
+
+body.dark-mode #menu-button {
+    background-color: var(--site-link-color);
+    border-color: var(--site-text-color);
+}
+
+/* Make sure dark mode styles also apply to nav */
+body.dark-mode .main-nav {
+    background-color: var(--header-background-color);
+}
+
+@media only screen and (max-width: 942px){
+
+    .site-header{
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    #menu-button{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 40px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%; 
+        order: 3; 
+        padding: 0;
+    }
+
+    .page-title {
+        width: 100%; 
+    }
+
+    .dark-mode-toggle {
+        display: inline-block;
+        position: absolute;
+        left: 500px;
+        top: 85px;
     }
 }
